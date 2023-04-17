@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Luckiest Guy' rel='stylesheet'>
+    <style>
+    .header {
+        height: 70px;
+        background-color: #31C48D;
+        font-family: 'Luckiest Guy';
+        text-align: center;
+        padding-left: 50px
+
+
+
+
+        }
+        .header h2 {
+        display: inline-block;
+        }
+        .image1 {
+
+        width: 300px;
+        height: 70px;
+        float: left;
+
+        }
+
+        .image2 {
+        width: 4%;
+        height: 60px;
+        float: right;
+        padding: 8px;
+
+        }
+        .darkblue {
+        color: darkblue;
+        }
+
+        h1 {
+            padding-right: 100px;
+            display: inline-block;
+
+        }
+        h3 {
+        display: inline-block;}
+        a {
+        text-decoration: none;
+        color: black;
+        }
+    </style>
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<div class="header">
+    <img class="image1" src="../static/trainingsfactory.png" alt="" >
+        <h1>Go <span class="darkblue">for it!</span></h1>
+        <a href="lessen.html"><h3>lessen</h3></a>
+        <a href="signup.html"><h3>Registreren</h3></a>
+        <a href="login.html"><h3>Inloggen</h3></a>
+        <a href="logout"><h3>Logout</h3></a>
+        {% if current_user.role == "admin" %}
+        <a href="admin.html"><h3>Admin</h3></a>
+        {% endif %}
+    {% if current_user.role == "instructeur" %}
+    <a href="instructeur.html"><h3>Instructeur</h3></a>
+    {%endif%}
+        <a href="/"><img class="image2" src="../static/home.png" alt="" ></a>
+
+
+
+</div>
+<br>
+</body>
+</html>
+
+{% block content%}
+{% endblock %}

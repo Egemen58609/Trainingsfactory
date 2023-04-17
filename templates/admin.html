@@ -1,0 +1,51 @@
+{% extends "header.html"%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% block content %}
+    <style>
+    .admin {
+        background-color: #31C48D;
+        width: 50%;
+        height: auto;
+        padding: 10px;
+        border: 5px solid black;
+        text-align: center;
+        }
+    h2 {
+    display: inline-block;}
+    }
+
+
+    </style>
+</head>
+<body>
+<center><h2>Gebruikers:</h2></center>
+<center><div class="admin">
+
+{% for user in our_users %}
+
+   {{user.id}} - {{user.email}} - {{user.role}}
+    <a href="/update/{{user.id}}" class="button1" >Update</a>
+    <a href="/delete/{{user.id}}">Delete</a>
+    <br>
+    <br>
+{% endfor%}
+</div></center>
+<br>
+<center><h2>Inschrijvingen:</h2></center>
+<center><div class="admin">
+    {% for user in users %}
+    {{user.email}} - {{user.les_id}}
+    <br>
+    <br>
+    {% endfor%}
+</div></center>
+
+
+{% endblock %}
+</body>
+</html>

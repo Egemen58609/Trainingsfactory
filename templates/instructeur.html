@@ -1,0 +1,40 @@
+{%extends 'header.html'%}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .instructeur {
+        background-color: #31C48D;
+        width: 50%;
+        height: auto;
+        padding: 10px;
+        border: 5px solid black;
+        text-align: center;
+        }
+    h2 {
+    display: inline-block;}
+    }
+    </style>
+</head>
+<body>
+<center><h2>Inschrijvingen:</h2></center>
+<center><div class="instructeur">
+    {% for user in users %}
+    {{user.email}} - {{user.les_id}}
+    <br>
+    <br>
+    {% endfor%}
+</div>
+    <br>
+<div class="instructeur">
+    <h2>Voeg les toe:</h2>
+    <br>
+    <a href="/updateles">Maak les aan</a>
+    </div></center>
+</body>
+{% endblock %}
+</html>

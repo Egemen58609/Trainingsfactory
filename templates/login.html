@@ -1,0 +1,53 @@
+{% extends 'header.html'%}
+
+{% block content%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    input {
+    width: 250px;
+    height: 30px;
+    }
+    .div1 {
+    background-color: #31C48D;
+    text-align: center;
+    width: 40%
+    height: 50%;
+    padding: 20px;
+    margin: auto;
+    border: 5px solid black;
+    }
+    h1 {
+    text-align: center;
+    }
+    a {
+    text-decoration: none;
+    color: black;
+    }
+
+
+    </style>
+</head>
+<body>
+<div class="div1">
+<h1>Login page</h1>
+ <form action="#" method="POST">
+    <input type="email" name="email" placeholder="Enter Email">
+    <br>
+     <br>
+    <input type="password" name="password" placeholder="Enter password">
+    <br>
+     <br>
+    <input type="submit">
+    <br>
+     <h3>dont have an account?</h3>
+     <a href="signup.html"><h4>Signup</h4></a>
+
+</form></div>
+{% endblock %}
+</body>
+</html>

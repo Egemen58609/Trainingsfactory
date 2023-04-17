@@ -1,0 +1,36 @@
+{% extends "header.html"%}
+ {% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+      .div4 {
+       background-color: #31C48D;
+       width: 100%;
+       height: auto;
+       border: 5px solid black;
+       }
+
+    </style>
+</head>
+
+<body>
+<center>
+<div class="div4">
+{% for les in lessen %}
+  <h3> {{les.id}} - {{les.datum}} <br>{{les.les}}</h3>
+    <form action="/lessen.html/{{les.id}}" method="post">
+        <input type="submit" value="schrijf in">
+
+    </form>
+    <br>
+{% endfor %}
+</div></center>
+</body>
+
+{% endblock %}
+</html>
